@@ -13,6 +13,11 @@ import avatar1 from  '../../assets/frontend/images/avatar-1.png'
 import avatar2 from  '../../assets/frontend/images/avatar-2.png'
 import avatar3 from  '../../assets/frontend/images/avatar-3.png'
 
+import travel1 from  '../../assets/frontend/images/travel-1.jpg'
+import travel2 from  '../../assets/frontend/images/travel-2.jpg'
+import travel3 from  '../../assets/frontend/images/travel-3.jpg'
+import travel4 from  '../../assets/frontend/images/travel-4.jpg'
+
 function Home(props) {
   return (
     <>
@@ -23,9 +28,9 @@ function Home(props) {
             },
             `
         }
-    </style>
+      </style>
 
-{/* <!-- Bootstrap navbar example --> */}
+    {/* <!-- Bootstrap navbar example --> */}
     {/* <!-- https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp --> */}
     <div className="container">
       <nav className="row navbar navbar-expand-lg navbar-light bg-white">
@@ -139,15 +144,14 @@ function Home(props) {
         <div className="container">
           <div className="section-popular-travel row justify-content-center">
             <div className="col-sm-6 col-md-4 col-lg-3">
-
               <div
-                className="card-travel text-center d-flex flex-column"
+                className="card-travel text-center d-flex flex-column "
+                style={{ backgroundImage: `url(${travel1})` }}
               >
-                <img src={img1} className="" />
                 <div className="travel-country">INDONESIA</div>
                 <div className="travel-location">DERATAN, BALI</div>
                 <div className="travel-button mt-auto">
-                  <a href="details.html" className="btn btn-travel-details px-4">
+                  <a href="/detail" className="btn btn-travel-details px-4">
                     View Details
                   </a>
                 </div>
@@ -155,13 +159,13 @@ function Home(props) {
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3">
               <div
-                className="card-travel text-center d-flex flex-column"
+                className="card-travel text-center d-flex flex-column "
+                style={{ backgroundImage: `url(${travel2})` }}
               >
-                <img src={img2} className="" />
                 <div className="travel-country">INDONESIA</div>
                 <div className="travel-location">BROMO, MALANG</div>
                 <div className="travel-button mt-auto">
-                  <a href="details.html" className="btn btn-travel-details px-4">
+                  <a href="/detail" className="btn btn-travel-details px-4">
                     View Details
                   </a>
                 </div>
@@ -169,13 +173,13 @@ function Home(props) {
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3">
               <div
-                className="card-travel text-center d-flex flex-column"
+                className="card-travel text-center d-flex flex-column "
+                style={{ backgroundImage: `url(${travel3})` }}
               >
-                <img src={img3} className="" />
                 <div className="travel-country">INDONESIA</div>
                 <div className="travel-location">NUSA PENIDA</div>
                 <div className="travel-button mt-auto">
-                  <a href="details.html" className="btn btn-travel-details px-4">
+                  <a href="/detail" className="btn btn-travel-details px-4">
                     View Details
                   </a>
                 </div>
@@ -183,13 +187,13 @@ function Home(props) {
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3">
               <div
-                className="card-travel text-center d-flex flex-column"
+                className="card-travel text-center d-flex flex-column "
+                style={{ backgroundImage: `url(${travel4})` }}
               >
-                <img src={img4} className="" />
                 <div className="travel-country">INDONESIA</div>
                 <div className="travel-location">DUBAI</div>
                 <div className="travel-button mt-auto">
-                  <a href="details.html" className="btn btn-travel-details px-4">
+                  <a href="/detail" className="btn btn-travel-details px-4">
                     View Details
                   </a>
                 </div>
@@ -256,7 +260,7 @@ function Home(props) {
               <div className="card card-testimonial text-center">
                 <div className="testimonial-content">
                   <img
-                    src={avatar2}
+                    src={avatar1}
                     alt=""
                     className="mb-4 rounded-circle"
                   />
@@ -274,7 +278,7 @@ function Home(props) {
               <div className="card card-testimonial text-center">
                 <div className="testimonial-content mb-auto">
                   <img
-                    src={avatar3}
+                    src={avatar1}
                     alt=""
                     className="mb-4 rounded-circle"
                   />
@@ -362,11 +366,12 @@ function Home(props) {
           className="row border-top justify-content-center align-items-center pt-4"
         >
           <div className="col-auto text-gray-500 font-weight-light">
-            {/* 2019 Copyright Nomads • All rights reserved • Made in Jakarta */}
+            2019 Copyright Nomads • All rights reserved • Made in Jakarta
           </div>
         </div>
       </div>
     </footer>
+
     </>
   )
 }
