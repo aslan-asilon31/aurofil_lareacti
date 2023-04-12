@@ -3,15 +3,9 @@ import React from 'react'
 import '../../assets/frontend/libraries/bootstrap/css/bootstrap.css'
 import '../../assets/frontend/styles/main.css'
 
-import img1 from  '../../assets/frontend/images/travel-1.jpg'
-import img2 from  '../../assets/frontend/images/travel-2.jpg'
-import img3 from  '../../assets/frontend/images/travel-3.jpg'
-import img4 from  '../../assets/frontend/images/travel-4.jpg'
 import imglogo from  '../../assets/frontend/images/logo.png'
 import imgpartner from  '../../assets/frontend/images/partner.png'
 import avatar1 from  '../../assets/frontend/images/avatar-1.png'
-import avatar2 from  '../../assets/frontend/images/avatar-2.png'
-import avatar3 from  '../../assets/frontend/images/avatar-3.png'
 
 import travel1 from  '../../assets/frontend/images/travel-1.jpg'
 import travel2 from  '../../assets/frontend/images/travel-2.jpg'
@@ -77,15 +71,15 @@ function Home(props) {
 
           {/* <!-- Mobile button --> */}
           <form className="form-inline d-sm-block d-md-none">
-            <button className="btn btn-login my-2 my-sm-0">
+            <a href="/login" className="btn btn-login my-2 my-sm-0">
               Masuk
-            </button>
+            </a>
           </form>
           {/* <!-- Desktop Button --> */}
           <form className="form-inline my-2 my-lg-0 d-none d-md-block">
-            <button className="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
+            <a href="/login" className="btn btn-login btn-navbar-right my-2 my-sm-0 px-4">
               Masuk
-            </button>
+            </a>
           </form>
         </div>
       </nav>

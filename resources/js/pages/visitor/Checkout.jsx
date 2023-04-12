@@ -124,8 +124,7 @@ function Checkout(props) {
                     />
 
                     <label
-                      className="sr-only"
-                      className="mr-2"
+                      className="sr-only mr-2"
                       for="inlineFormCustomSelectPref"
                       >Preference</label
                     >
