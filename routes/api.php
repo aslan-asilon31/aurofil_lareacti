@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+// Product
+Route::resource('products',ProductController::class);
+Route::get('searchproduct/{key}', [ProductController::class, 'search']);
+
+// Transaction
+Route::resource('transactions',TransactionController::class);
+Route::get('searchtransaction/{key}', [TransactionController::class, 'search']);
+
+
 Auth::routes();
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

@@ -1,100 +1,117 @@
-import React from 'react'
-import '../../assets/backend/vendor/fonts/boxicons.css'
-import '../../assets/backend/vendor/css/core.css'
-import '../../assets/backend/vendor/css/theme-default.css'
-import '../../assets/backend/css/demo.css'
-import '../../assets/backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.css'
-import '../../assets/backend/vendor/libs/apex-charts/apex-charts.css'
-import '../../assets/backend/vendor/css/pages/page-auth.css'
+import { useEffect } from 'react';
+import GuestLayout from '@/Layouts/GuestLayout';
+import InputError from '@/Components/InputError';
+import InputLabel from '@/Components/InputLabel';
+import PrimaryButton from '@/Components/PrimaryButton';
+import TextInput from '@/Components/TextInput';
+import { Head, Link, useForm } from '@inertiajs/react';
 
+export default function Register() {
+    const { data, setData, post, processing, errors, reset } = useForm({
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: '',
+    });
 
-function Register(props) {
-  return (
-    <>
-<div class="container-xxl">
-  <div className="authentication-wrapper authentication-basic container-p-y">
-          <div className="authentication-inner">
-            {/* <!-- Register --> */}
-            <div className="card">
-              <div className="card-body">
-                {/* <!-- Logo --> */}
-                <div className="app-brand justify-content-center">
-                  <a href="index.html" className="app-brand-link gap-2">
-                    <span className="app-brand-text demo text-body fw-bolder">Register</span>
-                  </a>
+    useEffect(() => {
+        return () => {
+            reset('password', 'password_confirmation');
+        };
+    }, []);
+
+    const submit = (e) => {
+        e.preventDefault();
+
+        post(route('register'));
+    };
+
+    return (
+        <GuestLayout>
+            <Head title="Register" />
+
+            <form onSubmit={submit}>
+                <div>
+                    <InputLabel htmlFor="name" value="Name" />
+
+                    <TextInput
+                        id="name"
+                        name="name"
+                        value={data.name}
+                        className="mt-1 block w-full"
+                        autoComplete="name"
+                        isFocused={true}
+                        onChange={(e) => setData('name', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.name} className="mt-2" />
                 </div>
-                {/* <!-- /Logo --> */}
-                <h4 className="mb-2">Adventure starts here 🚀</h4>
-                <p className="mb-4">Please sign-in to your account and start the adventure</p>
 
-                <form id="formAuthentication" className="mb-3" action="index.html" method="POST">
-                  <div className="mb-3">
-                    <label for="email" className="form-label">Username</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="username"
-                      name="username"
-                      placeholder="Enter yourusername"
-                      autofocus
+                <div className="mt-4">
+                    <InputLabel htmlFor="email" value="Email" />
+
+                    <TextInput
+                        id="email"
+                        type="email"
+                        name="email"
+                        value={data.email}
+                        className="mt-1 block w-full"
+                        autoComplete="username"
+                        onChange={(e) => setData('email', e.target.value)}
+                        required
                     />
-                  </div>
-                  <div className="mb-3">
-                    <label for="email" className="form-label">Email</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="email"
-                      name="email"
-                      placeholder="Enter your email"
-                      autofocus
-                    />
-                  </div>
-                  <div className="mb-3 form-password-toggle">
-                    <div className="d-flex justify-content-between">
-                      <label className="form-label" for="password">Password</label>
-                      <a href="auth-forgot-password-basic.html">
-                        <small>Forgot Password?</small>
-                      </a>
-                    </div>
-                    <div className="input-group input-group-merge">
-                      <input
-                        type="password"
+
+                    <InputError message={errors.email} className="mt-2" />
+                </div>
+
+                <div className="mt-4">
+                    <InputLabel htmlFor="password" value="Password" />
+
+                    <TextInput
                         id="password"
-                        className="form-control"
+                        type="password"
                         name="password"
-                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                        aria-describedby="password"
-                      />
-                      <span className="input-group-text cursor-pointer"><i className="bx bx-hide"></i></span>
-                    </div>
-                  </div>
-                  <div className="mb-3">
-                    <div className="form-check">
-                      <input className="form-check-input" type="checkbox" id="remember-me" />
-                      <label className="form-check-label" for="remember-me"> Remember Me </label>
-                    </div>
-                  </div>
-                  <div className="mb-3">
-                    <button className="btn btn-primary d-grid w-100" type="submit">Sign in</button>
-                  </div>
-                </form>
+                        value={data.password}
+                        className="mt-1 block w-full"
+                        autoComplete="new-password"
+                        onChange={(e) => setData('password', e.target.value)}
+                        required
+                    />
 
-                <p className="text-center">
-                  <span>New on our platform?</span>
-                  <a href="/login">
-                    <span>Create an account</span>
-                  </a>
-                </p>
-              </div>
-            </div>
-            {/* <!-- /Register --> */}
-          </div>
-  </div>
-</div>
-      
-    </>
-  )
+                    <InputError message={errors.password} className="mt-2" />
+                </div>
+
+                <div className="mt-4">
+                    <InputLabel htmlFor="password_confirmation" value="Confirm Password" />
+
+                    <TextInput
+                        id="password_confirmation"
+                        type="password"
+                        name="password_confirmation"
+                        value={data.password_confirmation}
+                        className="mt-1 block w-full"
+                        autoComplete="new-password"
+                        onChange={(e) => setData('password_confirmation', e.target.value)}
+                        required
+                    />
+
+                    <InputError message={errors.password_confirmation} className="mt-2" />
+                </div>
+
+                <div className="flex items-center justify-end mt-4">
+                    <Link
+                        href={route('login')}
+                        className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                    >
+                        Already registered?
+                    </Link>
+
+                    <PrimaryButton className="ml-4" disabled={processing}>
+                        Register
+                    </PrimaryButton>
+                </div>
+            </form>
+        </GuestLayout>
+    );
 }
-
-export default Register

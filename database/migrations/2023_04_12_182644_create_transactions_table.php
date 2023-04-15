@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->integer('travel_package_id');
+            $table->integer('user_id')->nullable();
+            $table->integer('additional_visa');
+            $table->integer('transaction_total');
+            $table->integer('transaction_status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
