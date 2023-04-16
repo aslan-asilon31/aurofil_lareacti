@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TravelPackageController;
@@ -16,6 +17,10 @@ use App\Http\Controllers\TravelPackageController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+// Place
+Route::resource('places',PlaceController::class);
+Route::get('searchplace/{key}', [PlaceController::class, 'search']);
 
 // Product
 Route::resource('products',ProductController::class);

@@ -20,7 +20,7 @@ import TopBar from '../../components/backend/TopBar'
 import Footer from '../../components/backend/Footer'
 
 
-function transactionList(props) {
+function Transaction(props) {
 
 
   const [transactions, setTransactions] = useState([])
@@ -115,7 +115,7 @@ function transactionList(props) {
                   {/* <!-- Contextual Classes --> */}
     
                   <div className="card">
-                    <h5 className="card-header">Product List</h5>
+                    <h5 className="card-header">Transaction List</h5>
                     <div className="table-responsive text-nowrap">
                       <div className="m-3">
                         <div className="col-12 text-white d-flex">
@@ -128,9 +128,9 @@ function transactionList(props) {
                               aria-label="Search"
                             />
                           </Form>
-                          <Link className='btn btn-primary mb-3 text-white float-end  ml-3 me-2' to={"/transaction/create"}>
-                              Create Product
-                          </Link>
+                          <Button className='btn btn-primary mb-3 text-white float-end  ml-3 me-2' to={"/transaction/create"}>
+                              Create Transaction
+                          </Button>
                         </div>
                         <Table striped bordered hover>
                           <thead>
@@ -154,9 +154,9 @@ function transactionList(props) {
                                             <td>{row.transaction_total}</td>
                                             <td>{row.transaction_status}</td>
                                             <td>
-                                                <Link to={`/transaction/edit/${row.id}`} className='btn btn-success me-2'>
+                                                <Button to={`/transaction/edit/${row.id}`} className='btn btn-success me-2'>
                                                     Edit
-                                                </Link>
+                                                </Button>
                                                 <Button variant="danger" onClick={()=>deleteTransaction(row.id)}>
                                                     Delete
                                                 </Button>
@@ -200,4 +200,4 @@ function transactionList(props) {
       )
 }
 
-export default transactionList
+export default Transaction

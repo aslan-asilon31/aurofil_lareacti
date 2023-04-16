@@ -29,6 +29,10 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/place', function () {
+    return Inertia::render('place/Place');
+})->middleware(['auth', 'verified'])->name('place');
+
 Route::get('/product', function () {
     return Inertia::render('product/Product');
 })->middleware(['auth', 'verified'])->name('product');
@@ -36,11 +40,13 @@ Route::get('/product/create', function () {
     return Inertia::render('product/ProductAdd');
 })->middleware(['auth', 'verified'])->name('productAdd');
 
+Route::get('/transaction', function () {
+    return Inertia::render('transaction/Transaction');
+})->middleware(['auth', 'verified'])->name('transaction');
 
-
-Route::get('/about', function () {
-    return Inertia::render('about/About');
-})->middleware(['auth', 'verified'])->name('about');
+Route::get('/transactiondetail', function () {
+    return Inertia::render('transactiondetail/transactionDetail');
+})->middleware(['auth', 'verified'])->name('transactiondetail');
 
 Route::get('/travelpackage', function () {
     return Inertia::render('travelpackage/travelPackage');
