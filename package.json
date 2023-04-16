@@ -22,6 +22,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@inertiajs/inertia-react": "^0.8.1",
         "react-bootstrap": "^2.7.2",
         "react-router-dom": "^6.10.0",
         "sweetalert2": "^11.7.3"

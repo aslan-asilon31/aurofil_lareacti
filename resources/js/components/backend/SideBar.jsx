@@ -63,7 +63,7 @@ function SideBar({ user, header, children }) {
             </li>
 
             <li className="menu-item ">
-              <a href="/travel-package" className="menu-link">
+              <a href="/travelpackage" className="menu-link">
                 <i className="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Travel Package</div>
               </a>

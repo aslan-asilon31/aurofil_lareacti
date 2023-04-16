@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class TravelPackage extends Model
 {
     use HasFactory;
+
+    
+    protected $fillable = [
+        'image',
+        'title',
+        'slug',
+        'location',
+        'about',
+        'featured_event',
+        'featured_event',
+        'language',
+        'foods',
+        'departure_date',
+        'duration',
+        'type',
+        'price',
+    ];
 }

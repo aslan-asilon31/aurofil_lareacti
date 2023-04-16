@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\TravelPackageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ Route::get('searchproduct/{key}', [ProductController::class, 'search']);
 // Transaction
 Route::resource('transactions',TransactionController::class);
 Route::get('searchtransaction/{key}', [TransactionController::class, 'search']);
+
+// Travel Package
+Route::resource('travelpackages',TravelPackageController::class);
+Route::get('searchtravelpackage/{key}', [TravelPackageController::class, 'search']);
 
 
 Auth::routes();
