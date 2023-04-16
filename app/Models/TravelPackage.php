@@ -17,7 +17,6 @@ class TravelPackage extends Model
         'location',
         'about',
         'featured_event',
-        'featured_event',
         'language',
         'foods',
         'departure_date',
