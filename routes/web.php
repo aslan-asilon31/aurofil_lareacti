@@ -39,6 +39,9 @@ Route::get('/product', function () {
 Route::get('/product/create', function () {
     return Inertia::render('product/ProductAdd');
 })->middleware(['auth', 'verified'])->name('productAdd');
+Route::get('/product/edit/id', function () {
+    return Inertia::render('product/ProductEdit');
+})->middleware(['auth', 'verified'])->name('productEdit');
 
 Route::get('/transaction', function () {
     return Inertia::render('transaction/Transaction');
